@@ -341,6 +341,10 @@ $(foreach target, $(shell cat $(LOCAL_PATH)/vndk.txt), $(eval PRODUCT_PACKAGES +
 PRODUCT_PACKAGES += \
     libvulkan
 
+# VNDK
+PRODUCT_PACKAGES += \
+    com.android.vndk.current.on_vendor
+
 # WiFi
 PRODUCT_PACKAGES += \
     WifiOverlay
