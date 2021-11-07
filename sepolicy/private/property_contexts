@@ -9,3 +9,6 @@ ro.build.flavor                    u:object_r:build_prop:s0
 ro.cust.test                       u:object_r:build_prop:s0
 ro.miui.                           u:object_r:build_prop:s0
 ro.product.mod_device              u:object_r:build_prop:s0
+
+# Fingerprint
+persist.sys.fp.                    u:object_r:vendor_fp_prop:s0
