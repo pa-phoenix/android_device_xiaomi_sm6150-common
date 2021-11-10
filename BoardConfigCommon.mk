@@ -97,6 +97,8 @@ BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += swiotlb=1
 BOARD_KERNEL_CMDLINE += androidboot.memcg=1 cgroup.memory=nokmem,nosocket
 
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 # TARGET_KERNEL_APPEND_DTB handling
 ifeq ($(strip $(PRODUCT_USE_DYNAMIC_PARTITIONS)),true)
 TARGET_KERNEL_APPEND_DTB := false
@@ -137,9 +139,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 VENDOR_SECURITY_PATCH := 2021-09-01
 
 # Sepolicy
-TARGET_SEPOLICY_DIR := msmsteppe
-include device/qcom/sepolicy_vndr/SEPolicy.mk
-
+SELINUX_IGNORE_NEVERALLOWS := true
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
